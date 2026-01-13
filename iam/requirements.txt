@@ -1,2 +1,0 @@
-pillow
-pyttsx3
