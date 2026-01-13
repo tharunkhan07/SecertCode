@@ -1,7 +1,6 @@
-# requirements-complete.txt
-# Install with: bash setup.sh
+# system-packages.txt
+# Install with: pkg install -y $(cat system-packages.txt)
 
-[system]
 bash
 coreutils
 file
@@ -13,22 +12,14 @@ termux-api
 python
 clang
 make
-build-essential
+pkg-config
+binutils
+cmake
 libjpeg-turbo
 libpng
 freetype
-
-[python]
-pillow
-pyttsx3
-pyaudio
-numpy
-opencv-python-headless
-requests
-
-[optional]
+libffi
 neofetch
 htop
 git
-cmake
 ffmpeg
