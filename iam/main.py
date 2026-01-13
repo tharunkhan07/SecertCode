@@ -1,8 +1,7 @@
 import os
-import sys
 import time
-import pyttsx3
 from PIL import Image
+from gtts import gTTS
 
 # ===== SETTINGS =====
 IMAGE_PATH = "friend.jpg"
@@ -12,7 +11,7 @@ WIDTH = 80
 chars = "@%#*+=-:. "
 
 def clear():
-    os.system("cls" if os.name == "nt" else "clear")
+    os.system("clear")
 
 def image_to_ascii(path):
     img = Image.open(path).convert("L")
@@ -28,23 +27,17 @@ def image_to_ascii(path):
         ascii_img += ascii_str[i:i+img.width] + "\n"
     return ascii_img
 
-# 🔊 DEFINE FUNCTION FIRST
 def laugh_loud():
-    engine = pyttsx3.init()
-    engine.setProperty("rate", 140)
-    engine.setProperty("volume", 1.0)
-
-    laughs = [
-        "Hahahahahaha!",
-        "HAHAHAHAHAHA!",
-        "Oh my god hahahahaha!",
+    text = (
+        "Hahahahahaha! "
+        "Oh my god hahahahaha! "
         "This is so funny hahahahaha!"
-    ]
+    )
 
-    for l in laughs:
-        engine.say(l)
+    tts = gTTS(text=text, lang="en")
+    tts.save("laugh.mp3")
 
-    engine.runAndWait()
+    os.system("termux-media-player play laugh.mp3")
 
 # ---------- START ----------
 clear()
@@ -54,5 +47,3 @@ print(ascii_image)
 laugh_loud()
 
 print("\n😂 THIS IS YOUR FRIEND 😂")
-
-
