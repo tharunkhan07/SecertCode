@@ -1,0 +1,34 @@
+# requirements-complete.txt
+# Install with: bash setup.sh
+
+[system]
+bash
+coreutils
+file
+curl
+exiftool
+imagemagick
+sox
+termux-api
+python
+clang
+make
+build-essential
+libjpeg-turbo
+libpng
+freetype
+
+[python]
+pillow
+pyttsx3
+pyaudio
+numpy
+opencv-python-headless
+requests
+
+[optional]
+neofetch
+htop
+git
+cmake
+ffmpeg
